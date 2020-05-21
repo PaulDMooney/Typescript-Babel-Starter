@@ -11,8 +11,7 @@
     "nodemon:debug": "nodemon --inspect",
     "build": "npm run type-check && babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "run:js": "node dist/index",
-    "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run type-check:watch\" \"npm run start:debug\""
-    
+    "start": "npm run nodemon:debug"
   },
   "keywords": [],
   "author": "",
