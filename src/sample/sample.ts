@@ -1,3 +1,3 @@
-export function logStuff() {
-    console.log('Stuff Logged');
+export function logStuff(someObject:any) {
+    console.log('Stuff Logged', someObject?.someProperty);
 }
