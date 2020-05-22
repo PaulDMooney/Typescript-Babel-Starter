@@ -1,7 +1,7 @@
-import { logStuff } from '@sample/sample'
+import { formatResponse } from '@sample/sample'
 
-describe('logStuff', () => {
+describe(formatResponse.name, () => {
     it('should exist', () => {
-        expect(logStuff).toBeTruthy();
+        expect(formatResponse).toBeTruthy();
     })
 })

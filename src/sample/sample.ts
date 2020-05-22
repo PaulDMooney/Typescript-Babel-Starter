@@ -1,3 +1,3 @@
-export function logStuff(someObject:any) {
-    console.log('Stuff Logged', someObject?.someProperty);
+export function formatResponse(someObject:{value:string}) {
+  return `Response: ${someObject?.value}`;
 }

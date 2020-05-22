@@ -1,19 +1,21 @@
 {
-  "compilerOptions": {             
-    "target": "es5",                          
-    "module": "commonjs",                     
-    "lib": ["dom","es6"],                     
-    "outDir": "dist",                         
-    "rootDir": "src",                         
-    "removeComments": true,                   
-    "strict": true,                           
-    "baseUrl": ".",                       
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom","es6"],
+    "outDir": "dist",
+    "rootDir": "src",
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "baseUrl": ".",
     "paths": {
       "@sample/*":["./src/sample/*"]
     },
-    "esModuleInterop": true,                  
-    "skipLibCheck": true,                     
-    "forceConsistentCasingInFileNames": true  
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
 
   }
 }

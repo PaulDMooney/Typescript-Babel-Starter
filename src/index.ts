@@ -1,7 +1,12 @@
-import { logStuff } from '@sample/sample';
+import { formatResponse } from '@sample/sample';
+import express from 'express';
 
-console.log('Hello world !!');
+const app: express.Application = express();
 
-setInterval(() => {
-    logStuff({someProperty:'someValue'})
-}, 1000)
+app.get('/', (req, res) => {
+  res.send(formatResponse({value:req.ip}))
+} );
+
+app.listen(3000, () => {
+  console.log('App is listening on port 3000');
+});
