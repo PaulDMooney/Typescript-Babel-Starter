@@ -6,15 +6,16 @@
   "scripts": {
     "build": "npm run type-check && babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "jest": "jest",
-    "nodemon": "nodemon",
-    "nodemon:debug": "nodemon --inspect",
+    "nodemon": "nodemon -r dotenv/config",
+    "nodemon:debug": "nodemon --inspect -r dotenv/config",
     "lint": "tsc --noEmit && eslint \"src/**/*.{js,ts}\"",
     "lint:fix": "eslint \"src/**/*.{js,ts}\" --quiet --fix",
     "lint-staged": "lint-staged",
-    "run:js": "node dist/index",
+    "run:js": "node -r dotenv/config dist/index",
     "start": "npm run nodemon:debug",
     "test": "jest --detectOpenHandles --forceExit",
     "test:watch": "jest --detectOpenHandles --forceExit --watch a",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch"
   },
@@ -59,6 +60,7 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   }
 }
