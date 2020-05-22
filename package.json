@@ -1,17 +1,19 @@
 {
-  "name": "TypescriptNodeServer",
+  "name": "typescript-babel-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run type-check && babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "jest": "jest",
     "nodemon": "nodemon",
     "nodemon:debug": "nodemon --inspect",
-    "build": "npm run type-check && babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "run:js": "node dist/index",
-    "start": "npm run nodemon:debug"
+    "start": "npm run nodemon:debug",
+    "test": "jest --detectOpenHandles --forceExit",
+    "test:watch": "jest --detectOpenHandles --forceExit --watch a",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
   },
   "keywords": [],
   "author": "",
@@ -24,12 +26,15 @@
     "@babel/plugin-proposal-optional-chaining": "^7.9.0",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-typescript": "^7.9.0",
+    "@types/jest": "^25.2.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
     "concurrently": "^5.2.0",
+    "jest": "^26.0.1",
     "nodemon": "^2.0.4",
+    "ts-jest": "^26.0.0",
+    "tsconfig-paths-jest": "0.0.1",
     "typescript": "^3.9.3"
   },
-  "dependencies": {
-    "babel-loader": "^8.1.0",
-    "babel-plugin-module-resolver": "^4.0.0"
-  }
+  "dependencies": {}
 }
