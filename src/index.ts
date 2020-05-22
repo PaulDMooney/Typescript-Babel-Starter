@@ -4,7 +4,7 @@ import express from 'express';
 const app: express.Application = express();
 
 app.get('/', (req, res) => {
-  res.send(formatResponse({value:req.ip}))
+  res.send(formatResponse({value:req.ip}));
 } );
 
 app.listen(3000, () => {
