@@ -10,12 +10,23 @@
     "nodemon:debug": "nodemon --inspect",
     "lint": "tsc --noEmit && eslint \"src/**/*.{js,ts}\"",
     "lint:fix": "eslint \"src/**/*.{js,ts}\" --quiet --fix",
+    "lint-staged": "lint-staged",
     "run:js": "node dist/index",
     "start": "npm run nodemon:debug",
     "test": "jest --detectOpenHandles --forceExit",
     "test:watch": "jest --detectOpenHandles --forceExit --watch a",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "keywords": [],
   "author": "",
@@ -36,7 +47,9 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "concurrently": "^5.2.0",
     "eslint": "^7.0.0",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "lint-staged": "^10.2.6",
     "nodemon": "^2.0.4",
     "ts-jest": "^26.0.0",
     "tsconfig-paths-jest": "0.0.1",
