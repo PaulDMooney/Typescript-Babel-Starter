@@ -1,3 +1,3 @@
-export function formatResponse(someObject:{value:string}) {
+export function formatResponse(someObject: { value: string }) {
   return `Response: ${someObject?.value}`;
 }
