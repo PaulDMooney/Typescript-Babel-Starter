@@ -15,6 +15,7 @@
     "start": "npm run nodemon:debug",
     "test": "jest --detectOpenHandles --forceExit",
     "test:watch": "jest --detectOpenHandles --forceExit --watch a",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch"
   },
