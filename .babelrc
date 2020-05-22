@@ -7,7 +7,7 @@
       ["module-resolver", {
         "root": ["."],
         "alias": {
-          "@sample": "./src/sample",
+          "$sample": "./src/sample",
         }
       }]
     ],

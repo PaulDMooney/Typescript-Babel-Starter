@@ -1,4 +1,4 @@
-import { formatResponse } from '@sample/sample';
+import { formatResponse } from '$sample/sample';
 import express from 'express';
 
 const app: express.Application = express();
