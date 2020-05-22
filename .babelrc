@@ -4,10 +4,12 @@
       "@babel/preset-env"
     ],
     "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-optional-chaining",
       ["module-resolver", {
         "root": ["."],
         "alias": {
-          "$sample": "./src/sample",
+          "@sample": "./src/sample"
         }
       }]
     ],

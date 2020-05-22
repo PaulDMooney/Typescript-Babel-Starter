@@ -11,7 +11,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "$sample/*":["./src/sample/*"]
+      "@sample/*":["./src/sample/*"]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,

@@ -7,6 +7,17 @@ The project goal is to provide a sample starter project that supports:
 * Module aliasing.
 * Testing using Jest.
 
+## Module Aliasing
+
+Module Aliasing or Path Aliasing helps keeps import paths in projects rational. Especially larger projects. Rather than having having imports that are relative, which can get messy fast (eg, `import dateUtils from '../../../../../utils/dateUtils'`) we can have something a little more readable. Eg `import dateUtils from '$utils/dateUtils'`. This can also ease refactoring where a source file might be moved, because now it's imports don't have to be re-rewritten to account for their new relative locations.
+
+### Adding Module Aliases
+
+Whenever a new module alias is required it must be added in two places:
+
+* `tsconfig.json`: under compilerOptions -> paths
+* `.babelrc`: under plugins -> "module-resolver" -> alias
+
 ## Why compile Typescript with Babel
 
 Babel is one option to use for supporting module aliasing. It may have some drawbacks like lack of decorator metadata and a few other caveats mentioned [here](https://devblogs.microsoft.com/typescript/typescript-and-babel-7/).
